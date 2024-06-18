@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Premier League Fixtures</string>
+    <string name="match_list">Список матчей</string>
+    <string name="go_to_details">Перейти к деталям матча</string>
 </resources>
