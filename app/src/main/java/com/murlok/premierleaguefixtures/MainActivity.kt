@@ -1,6 +1,7 @@
 package com.murlok.premierleaguefixtures
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 
@@ -10,8 +11,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setSupportActionBar(findViewById(R.id.my_toolbar))
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.home_icon)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        // Load the first fragment by default
+
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainer, FirstFragment())
@@ -19,11 +23,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Function to replace fragments
     fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, fragment)
             .addToBackStack(null)
             .commit()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            android.R.id.home -> replaceFragment(FirstFragment())
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
