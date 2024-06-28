@@ -1,10 +1,11 @@
-package com.murlok.premierleaguefixtures
+package com.murlok.premierleaguefixtures.ui.details
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.murlok.premierleaguefixtures.R
 
 class DetailScreenFragment : Fragment() {
 

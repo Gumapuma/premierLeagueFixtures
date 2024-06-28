@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/lightGray"
+    android:background="@color/white"
     android:padding="20dp"
+    android:layout_margin="10dp"
     android:orientation="vertical">
 
     <View
@@ -25,16 +26,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/white"
             android:text="@string/home_team"
             android:textAlignment="center" />
 
         <TextView
             android:id="@+id/awayTeamItemLabel"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textColor="@color/white"
             android:text="@string/away_team"
             android:textAlignment="center" />
     </LinearLayout>
@@ -49,7 +48,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/white"
             android:text=""
             android:textAlignment="center" />
 
@@ -58,7 +56,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/white"
             android:text=""
             android:textAlignment="center" />
     </LinearLayout>
@@ -68,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="10dp" />
 
 
 </LinearLayout>

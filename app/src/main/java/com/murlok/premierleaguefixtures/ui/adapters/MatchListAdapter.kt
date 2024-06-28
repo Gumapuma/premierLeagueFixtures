@@ -1,10 +1,13 @@
-package com.murlok.premierleaguefixtures
+package com.murlok.premierleaguefixtures.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.murlok.premierleaguefixtures.R
+import com.murlok.premierleaguefixtures.ui.details.DetailScreenFragment
+import com.murlok.premierleaguefixtures.ui.main.MainActivity
 
 class MatchListAdapter(private val dataSet: Array<String>) :
     RecyclerView.Adapter<MatchListAdapter.ViewHolder>() {

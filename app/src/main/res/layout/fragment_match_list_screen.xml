@@ -3,12 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@color/lightGray">
 
     <TextView
         android:id="@+id/firstFragmentText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="@string/match_list" />
 
     <androidx.recyclerview.widget.RecyclerView
