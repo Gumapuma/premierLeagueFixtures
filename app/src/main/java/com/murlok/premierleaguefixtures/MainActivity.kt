@@ -18,12 +18,14 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, FirstFragment())
+                .replace(R.id.fragmentContainer, MatchListScreenFragment())
                 .commit()
         }
     }
 
-    fun replaceFragment(fragment: Fragment) {
+    fun replaceFragment(fragment: Fragment, bundle: Bundle? = null) {
+        if(bundle != null) fragment.arguments = bundle
+
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, fragment)
             .addToBackStack(null)
@@ -32,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
-            android.R.id.home -> replaceFragment(FirstFragment())
+            android.R.id.home -> replaceFragment(MatchListScreenFragment())
         }
         return super.onOptionsItemSelected(item)
     }

@@ -12,4 +12,6 @@
     <string name="detailsHomeTeamScore">Счёт хозяев:</string>
     <string name="detailsAwayTeamScore">Счёт гостей:</string>
     <string name="backToListButtonText">Вернуться к списку матчей</string>
+    <string name="home_team">Домашняя команда</string>
+    <string name="away_team">Команда гостей</string>
 </resources>

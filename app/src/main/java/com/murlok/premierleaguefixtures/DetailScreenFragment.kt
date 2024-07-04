@@ -12,7 +12,7 @@ class DetailScreenFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.details_screen_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_details_screen, container, false)
     }
 
 }
