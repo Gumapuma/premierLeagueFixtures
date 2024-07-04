@@ -1,45 +1,37 @@
 package com.murlok.premierleaguefixtures.ui.main
 
 import android.os.Bundle
-import android.view.MenuItem
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import com.murlok.premierleaguefixtures.R
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import com.murlok.premierleaguefixtures.ui.theme.PremiereLeagueFixturesTheme
 
 class MainActivity : AppCompatActivity() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(findViewById(R.id.my_toolbar))
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.home_icon)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, MatchListScreenFragment())
-                .commit()
+        setContent{
+            PremiereLeagueFixturesTheme {
+                MainScreen()
+            }
         }
     }
+}
 
-    fun replaceFragment(fragment: Fragment, bundle: Bundle? = null) {
-        if(bundle != null) fragment.arguments = bundle
+@Composable
+fun MainScreen() {
+    var selectedMatch by remember { mutableStateOf<String?>(null) }
 
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, fragment)
-            .addToBackStack(null)
-            .commit()
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putString("myKey", "Hello, Bundle!")
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
-            android.R.id.home -> replaceFragment(MatchListScreenFragment())
+    if (selectedMatch == null) {
+        MatchListScreen { match ->
+            selectedMatch = match
         }
-        return super.onOptionsItemSelected(item)
+    } else {
+        DetailsScreen(match = selectedMatch!!, onBack = { selectedMatch = null })
     }
 }
