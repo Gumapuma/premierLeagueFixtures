@@ -1,4 +1,4 @@
-package com.murlok.premierleaguefixtures
+package com.murlok.premierleaguefixtures.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.murlok.premierleaguefixtures.ui.adapters.MatchListAdapter
+import com.murlok.premierleaguefixtures.R
 
 class MatchListScreenFragment : Fragment() {
 

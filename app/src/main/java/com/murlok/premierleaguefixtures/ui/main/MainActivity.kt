@@ -1,10 +1,10 @@
-package com.murlok.premierleaguefixtures
+package com.murlok.premierleaguefixtures.ui.main
 
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-
+import com.murlok.premierleaguefixtures.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.my_toolbar))
         supportActionBar?.setHomeAsUpIndicator(R.drawable.home_icon)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
@@ -30,6 +29,11 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragmentContainer, fragment)
             .addToBackStack(null)
             .commit()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("myKey", "Hello, Bundle!")
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
