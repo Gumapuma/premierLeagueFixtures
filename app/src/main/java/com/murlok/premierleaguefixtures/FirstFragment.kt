@@ -21,7 +21,7 @@ class FirstFragment : Fragment() {
 
         val buttonToSecondFragment: Button = view.findViewById(R.id.buttonToSecondFragment)
         buttonToSecondFragment.setOnClickListener {
-            (activity as MainActivity).replaceFragment(SecondFragment())
+            (activity as MainActivity).replaceFragment(DetailScreenFragment())
         }
     }
 }
