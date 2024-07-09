@@ -8,6 +8,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import com.murlok.premierleaguefixtures.data.model.FootballMatch
 import com.murlok.premierleaguefixtures.ui.theme.PremiereLeagueFixturesTheme
 
 class MainActivity : AppCompatActivity() {
@@ -25,12 +26,12 @@ class MainActivity : AppCompatActivity() {
 
 @Composable
 fun MainScreen() {
-    var selectedMatch by remember { mutableStateOf<String?>(null) }
+    var selectedMatch by remember { mutableStateOf<FootballMatch?>(null) }
 
     if (selectedMatch == null) {
-        MatchListScreen { match ->
+        MatchListScreen(onMatchClick = { match ->
             selectedMatch = match
-        }
+        })
     } else {
         DetailsScreen(match = selectedMatch!!, onBack = { selectedMatch = null })
     }
