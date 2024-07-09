@@ -1,6 +1,5 @@
 package com.murlok.premierleaguefixtures.ui.main
 
-import android.util.Log
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -18,14 +17,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.murlok.premierleaguefixtures.R
+import com.murlok.premierleaguefixtures.data.model.FootballMatch
 
-@Preview
 @Composable
-fun DetailsScreen(match: String, onBack: () -> Unit) {
+fun DetailsScreen(match: FootballMatch, onBack: () -> Unit) {
     val scrollState = rememberScrollState()
 
     BackHandler {
@@ -51,19 +49,19 @@ fun DetailsScreen(match: String, onBack: () -> Unit) {
                     .padding(vertical = 5.dp)
             ) {
                 Text(
-                    text = stringResource(id = R.string.detailsMatchNumber),
+                    text = stringResource(id = R.string.detailsMatchNumber) + match.matchNumber,
                     fontSize = 18.sp,
                     modifier = Modifier.weight(1f)
                 )
                 Text(
-                    text = stringResource(id = R.string.detailsRoundNumber),
+                    text = stringResource(id = R.string.detailsRoundNumber) + match.roundNumber,
                     fontSize = 18.sp,
                     modifier = Modifier.weight(1f)
                 )
             }
 
             Text(
-                text = stringResource(id = R.string.detailsDate),
+                text = stringResource(id = R.string.detailsDate) + match.dateUtc,
                 fontSize = 18.sp,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -73,7 +71,7 @@ fun DetailsScreen(match: String, onBack: () -> Unit) {
             )
 
             Text(
-                text = stringResource(id = R.string.detailsLocation),
+                text = stringResource(id = R.string.detailsLocation) + match.location,
                 fontSize = 18.sp,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -83,7 +81,7 @@ fun DetailsScreen(match: String, onBack: () -> Unit) {
             )
 
             Text(
-                text = stringResource(id = R.string.detailsHomeTeam),
+                text = stringResource(id = R.string.detailsHomeTeam) + match.homeTeam,
                 fontSize = 18.sp,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -93,7 +91,7 @@ fun DetailsScreen(match: String, onBack: () -> Unit) {
             )
 
             Text(
-                text = stringResource(id = R.string.detailsAwayTeam),
+                text = stringResource(id = R.string.detailsAwayTeam) + match.awayTeam,
                 fontSize = 18.sp,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -103,7 +101,7 @@ fun DetailsScreen(match: String, onBack: () -> Unit) {
             )
 
             Text(
-                text = stringResource(id = R.string.detailsGroup),
+                text = stringResource(id = R.string.detailsGroup) + match.group,
                 fontSize = 18.sp,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -118,12 +116,12 @@ fun DetailsScreen(match: String, onBack: () -> Unit) {
                     .padding(vertical = 5.dp)
             ) {
                 Text(
-                    text = stringResource(id = R.string.detailsHomeTeamScore),
+                    text = stringResource(id = R.string.detailsHomeTeamScore) + match.homeTeamScore,
                     fontSize = 18.sp,
                     modifier = Modifier.weight(1f)
                 )
                 Text(
-                    text = stringResource(id = R.string.detailsAwayTeamScore),
+                    text = stringResource(id = R.string.detailsAwayTeamScore) + match.awayTeamScore,
                     fontSize = 18.sp,
                     modifier = Modifier.weight(1f)
                 )

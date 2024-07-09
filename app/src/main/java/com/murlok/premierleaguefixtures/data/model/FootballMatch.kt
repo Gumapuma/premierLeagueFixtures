@@ -2,6 +2,7 @@ package com.murlok.premierleaguefixtures.data.model
 
 import com.google.gson.annotations.SerializedName
 
+
 data class FootballMatch(
     @SerializedName("MatchNumber")
     val matchNumber: Int,
