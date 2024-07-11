@@ -1,4 +1,4 @@
-package com.murlok.premierleaguefixtures.ui.main
+package com.murlok.premierleaguefixtures.view.main
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -13,17 +13,11 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.murlok.premierleaguefixtures.data.model.FootballMatch
-import com.murlok.premierleaguefixtures.data.repository.FootballRepository
-import com.murlok.premierleaguefixtures.ui.stateHolders.MatchListViewModel
 
 
 @Composable
@@ -44,11 +38,8 @@ fun MatchListItem(match: FootballMatch, onMatchClick: (FootballMatch) -> Unit) {
     }
 }
 
-@Preview
 @Composable
-fun MatchListScreen(onMatchClick: (FootballMatch) -> Unit, viewModel: MatchListViewModel = viewModel()) {
-    val matches by viewModel.matches.observeAsState(emptyList())
-
+fun MatchListScreen(matches: List<FootballMatch>, onMatchClick: (FootballMatch) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()

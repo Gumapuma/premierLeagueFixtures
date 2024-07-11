@@ -1,8 +1,7 @@
-package com.murlok.premierleaguefixtures.ui.theme
+package com.murlok.premierleaguefixtures.view.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.lightColorScheme
-import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 

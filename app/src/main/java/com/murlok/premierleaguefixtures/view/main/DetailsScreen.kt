@@ -1,4 +1,4 @@
-package com.murlok.premierleaguefixtures.ui.main
+package com.murlok.premierleaguefixtures.view.main
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
