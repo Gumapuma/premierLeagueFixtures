@@ -1,6 +1,7 @@
 package com.murlok.premierleaguefixtures.data.model
 
 import com.google.gson.annotations.SerializedName
+import com.murlok.premierleaguefixtures.data.room.dao.FootballMatchEntity
 
 
 data class FootballMatch(
@@ -22,4 +23,19 @@ data class FootballMatch(
     val homeTeamScore: Int,
     @SerializedName("AwayTeamScore")
     val awayTeamScore: Int
-)
+) {
+    companion object {
+        fun FootballMatch.toFootballMatchEntity(): FootballMatchEntity = FootballMatchEntity(
+            matchNumber = this.matchNumber,
+            roundNumber = this.roundNumber,
+            dateUtc = this.dateUtc,
+            location = this.location,
+            homeTeam = this.homeTeam,
+            awayTeam = this.awayTeam,
+            group = this.group,
+            homeTeamScore = this.homeTeamScore,
+            awayTeamScore = this.awayTeamScore
+        )
+    }
+
+}

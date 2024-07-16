@@ -4,5 +4,6 @@ import com.murlok.premierleaguefixtures.data.model.FootballMatch
 import kotlinx.coroutines.flow.Flow
 
 interface MainRepository {
-    fun getMatches(): Flow<List<FootballMatch>>
+    suspend fun getMatchesFromLocal(): Flow<List<FootballMatch>>
+    suspend fun updateLocalMatches(): Unit
 }
