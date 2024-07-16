@@ -66,7 +66,7 @@ fun DetailsScreen(match: FootballMatch, onBack: () -> Unit) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(vertical = 5.dp)
-                    .align(Alignment.CenterHorizontally),
+                    .align(Alignment.Start),
                 textAlign = TextAlign.Center
             )
 
@@ -76,7 +76,7 @@ fun DetailsScreen(match: FootballMatch, onBack: () -> Unit) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(vertical = 5.dp)
-                    .align(Alignment.CenterHorizontally),
+                    .align(Alignment.Start),
                 textAlign = TextAlign.Center
             )
 
@@ -86,7 +86,7 @@ fun DetailsScreen(match: FootballMatch, onBack: () -> Unit) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(vertical = 5.dp)
-                    .align(Alignment.CenterHorizontally),
+                    .align(Alignment.Start),
                 textAlign = TextAlign.Center
             )
 
@@ -96,7 +96,7 @@ fun DetailsScreen(match: FootballMatch, onBack: () -> Unit) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(vertical = 5.dp)
-                    .align(Alignment.CenterHorizontally),
+                    .align(Alignment.Start),
                 textAlign = TextAlign.Center
             )
 
@@ -106,7 +106,7 @@ fun DetailsScreen(match: FootballMatch, onBack: () -> Unit) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(vertical = 5.dp)
-                    .align(Alignment.CenterHorizontally),
+                    .align(Alignment.Start),
                 textAlign = TextAlign.Center
             )
 
