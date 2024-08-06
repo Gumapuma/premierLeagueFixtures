@@ -3,7 +3,6 @@ package com.murlok.premierleaguefixtures.view.main
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import android.os.Build
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
@@ -14,37 +13,26 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.murlok.premierleaguefixtures.data.model.FootballMatch
-import com.murlok.premierleaguefixtures.data.network.APIForRetrofit
-import com.murlok.premierleaguefixtures.data.repository.MainRepositoryImpl
-import com.murlok.premierleaguefixtures.data.room.MatchDatabase
 import com.murlok.premierleaguefixtures.view.stateHolders.MainViewModel
 import com.murlok.premierleaguefixtures.view.theme.PremiereLeagueFixturesTheme
-import kotlinx.coroutines.CoroutineName
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 class MainActivity : AppCompatActivity() {
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val mainViewModel: MainViewModel = getViewModel()
 
         setContent {
             PremiereLeagueFixturesTheme {
-                MainScreen(context = applicationContext)
+                MainScreen(mainViewModel, context = applicationContext)
             }
         }
     }
 }
 
 @Composable
-fun MainScreen(viewModel: MainViewModel = viewModel(), context: Context) {
+fun MainScreen(viewModel: MainViewModel, context: Context) {
     var selectedMatch by remember { mutableStateOf<FootballMatch?>(null) }
     val matches by viewModel.matches.collectAsState()
 
