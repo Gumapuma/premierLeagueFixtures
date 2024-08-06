@@ -29,24 +29,26 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     buildFeatures { // Enables Jetpack Compose for this module
         compose = true
     }
+
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.2"
     }
 }
 
 dependencies {
-
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -67,13 +69,16 @@ dependencies {
     //Room
     implementation(libs.androidx.room.runtime)
     kapt(libs.androidx.room.compiler)
-
     implementation(libs.androidx.room.ktx)
 
     //Networking (retrofit, gson)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.logging.interceptor)
+
+    //Koin
+    implementation(libs.koin.android)
+    implementation(libs.koin.core)
 
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)

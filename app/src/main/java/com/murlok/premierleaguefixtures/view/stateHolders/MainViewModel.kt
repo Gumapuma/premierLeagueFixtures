@@ -13,17 +13,7 @@ import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class MainViewModel : ViewModel() {
-    private val retrofit: Retrofit = Retrofit.Builder()
-        .baseUrl("https://fixturedownload.com/feed/json/")
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-
-    private val networkApi: APIForRetrofit = retrofit.create(APIForRetrofit::class.java)
-
-    private val database = MatchDatabase.getDatabase()
-
-    private val repository: MainRepository = MainRepositoryImpl(networkApi, database)
+class MainViewModel(private val repository: MainRepository) : ViewModel() {
     private val _matches = MutableStateFlow<List<FootballMatch>>(emptyList())
     val matches: StateFlow<List<FootballMatch>> get() = _matches
 
