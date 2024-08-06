@@ -2,4 +2,16 @@
     <string name="app_name">Premier League Fixtures</string>
     <string name="match_list">Список матчей</string>
     <string name="go_to_details">Перейти к деталям матча</string>
+    <string name="detailsRoundNumber">Раунд:</string>
+    <string name="detailsMatchNumber">Номер матча:</string>
+    <string name="detailsDate">Дата проведения:</string>
+    <string name="detailsLocation">Место проведения:</string>
+    <string name="detailsHomeTeam">Команда хозяев:</string>
+    <string name="detailsAwayTeam">Команда гостей:</string>
+    <string name="detailsGroup">Группа:</string>
+    <string name="detailsHomeTeamScore">Счёт хозяев:</string>
+    <string name="detailsAwayTeamScore">Счёт гостей:</string>
+    <string name="backToListButtonText">Вернуться к списку матчей</string>
+    <string name="home_team">Домашняя команда</string>
+    <string name="away_team">Команда гостей</string>
 </resources>
